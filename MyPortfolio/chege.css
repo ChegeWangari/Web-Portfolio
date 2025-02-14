@@ -1,145 +1,218 @@
-* {
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-
+    font-family: sans-serif ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
-    background-color: rgb(51, 49, 49);
+    background-color:black;
 }
 
 a{
     color: #fff;
     text-decoration: none;
-
 }
-
 .navbar{
+
     display: flex;
+    padding: 20px 9% 0;
     justify-content: space-between;
-    padding: 20px 5% 0;
-    z-index: 100%;
     align-items: center;
-    width: 100%;
-    position: static;
+    
+    
 }
 
-.navbar .Logo{
+.navbar .logo{
+    font-size: 40px;
     font-weight: 700;
-    font-size: 36px;
-    color: burlywood;
+    color: rgb(15, 209, 77);
+    
 }
 
-.navbar ul {
+.navbar ul{
     display: flex;
+
 }
 
 .navbar ul li{
-    list-style: none;
     padding-left: 35px;
-}
-
-.navbar ul li a{
-    font-family: sans-serif;
-    font-weight: 600;
-    transition: 5s;
+    list-style: none;
+    font-size: 25px;
+    font-weight: 500;
+    transition: .5s;
 }
 
 .navbar ul li:hover a,
-.navbar ul li .active{
-    color: rgb(241, 142, 13);
+.navbar ul li .active  {
+    color: rgb(9, 125, 9);
+
 }
 
 
 .home{
     display: flex;
-    color: #fff;
+    padding: 30px 9% 0;
     align-items: center;
-    padding-left: 60px 9% 0 ;
     height: 100vh;
-    z-index: 100;
+}
+
+.home .home-info h4{
+    font-size: 25px;
+    color: rgb(236, 139, 20);
+    font-weight: bold;
+}
+    .home .home-info h1{
+    font-size: 40px;
+    color: rgb(15, 209, 77);
+    font-weight: bold;
+}
+    
+
+
+.home .home-info h2{
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(236, 139, 20);
 
 }
 
-.home-info h1{
-    font-size: 37PX;
-
-}
-.home-info h2{
-    font-size: 27px;
-    margin-top: -5px;
-    color: rgb(241, 142, 13);
-}
-.home-info p{
+.home .home-info p{
     font-size: 16px;
-    text-align: left;
-    margin: 10px 0 25px;
-}
-    
-.btn {
-    display: inline-flex;
-    padding: 30px 0% ;
-    background-color: rgb(241, 142, 13);
-    border-radius: 40px;
-    border: 2px solid rgb(241, 142, 13);
-    box-shadow: 0 0 10px rgb(241, 142, 13);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    transition: 5s;
-    
-    
-   
-}
-
-.btn:hover {
-    background: transparent;
     color: white;
-    box-shadow:  none;
 }
 
+.home .home-info .btn-grp{
+    align-items: center;
+    padding: 20px;
+    display: flex;
+}
 
+.home .home-info .btn-grp .button{
+    background-color: rgb(236, 139, 20); 
+    padding: 15px 30px;
+    border-radius: 20px;
+    border: 2px dotted rgb(236, 139, 20);
+    transition: 3s;
+    box-shadow: 0 0 10px rgb(236, 139, 20);
+}
 
-.group a i{
-    display: inline-flex;
-    padding: 8px;
-    border: 2px solid rgb(241, 142, 13);
+.home .home-info .btn-grp:hover .button{
+    background-color: transparent;
+    box-shadow: none;
+    
+} 
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    font-size: 25px;
+    color: white;
+    background-color: rgb(236, 139, 20);
     border-radius: 50%;
-    font-size: 20px;
-    margin: 5px 100px;
-    transition: 5s;
+    border: 2px solid rgb(236, 139, 20);
+    transition: 0.3s ease-in-out;
 }
 
-.group a:hover i{
-    background: rgb(241, 142, 13);
-    color: white;
-    box-shadow: 0 0 10px;
+.social-icons a:hover {
+    background-color: transparent;
+    color: rgb(236, 139, 20);
 }
 
-.btn-group{
-    padding: 200px 0 10px;
-}
 
 img{
-                
-    
-    border-radius: 50%;
+     border-radius: 50%;
     background: rgb(241, 142, 13) ;
-     padding: 5px;
-     width: 225px;
-     height: 275px;
+     max-width: 275px;
+     height: 225px;
+     padding: 10px;
      border: 1px;
      display: block;
-     margin-left: auto;
-     margin-right: auto;
+     margin-left: 30px;
      opacity: 1;
      object-fit: cover;
      -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
 
      
       
+}
+
+ /* The about section*/
+ .about{
+    padding: 30px;
+    display: flex;
+   align-items:center;
+    height: 100vh;
+    color: white;
+    margin-bottom: 50px
+    
+
+}
+
+.about .about-me h1{
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(15, 209, 77);
+    
+
+}
+
+
+.about .about-me p{
+    font-size: 16px;
+    color: white
+
+}
+ /* Skills table section */
+ .skills{
+    display:flex ;
+    align-items:center;
+    height: auto;
+    padding: 20px;
+
+
+ }
+  h2{
+    font-size: 40px;
+    color:white
+    
+ }
+ .box {
+    
+    border: 2px solid rgb(236, 139, 20);
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+.box:hover {
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+    box-shadow: 0 2px 2px rgb(15, 209, 77); /* Enhanced shadow on hover */
+}
+.box h3 {
+    color: rgb(15, 209, 77);
+    font-size: 30px;
+    font-weight: bold;
+}
+.box ul, .box ol {
+    text-align: left;
+    padding-left: 20px;
+    color: white;
+}
+/* Grid Layout for Boxes */
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin: 20px;
 }
 
 
