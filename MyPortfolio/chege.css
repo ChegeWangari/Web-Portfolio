@@ -99,6 +99,7 @@ a{
 .home .home-info .btn-grp:hover .button{
     background-color: transparent;
     box-shadow: none;
+    padding-right: 20px;
     
 } 
 
