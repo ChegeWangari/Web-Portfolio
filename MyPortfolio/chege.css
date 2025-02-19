@@ -73,6 +73,7 @@ a{
     font-size: 30px;
     font-weight: bold;
     color: rgb(236, 139, 20);
+    text-align: left;
 
 }
 
@@ -104,7 +105,7 @@ a{
 
 .social-icons {
     display: flex;
-    gap: 15px;
+    gap: 16px;
 }
 
 .social-icons a {
@@ -171,52 +172,51 @@ img{
 
 }
  /* Skills table section */
- .skills{
-    display:flex ;
-    align-items:center;
-    height: auto;
+ .skills {
+    max-width: 900px;
     padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-
- }
-  h2{
-    font-size: 40px;
-    color:white
-    
- }
- .box {
-    
-    border: 2px solid rgb(236, 139, 20);
-    padding: 20px;
-    margin-left: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-.box:hover {
-    transform: scale(1.05); /* Slightly enlarge the box on hover */
-    box-shadow: 0 2px 2px rgb(15, 209, 77); /* Enhanced shadow on hover */
-}
-.box h3 {
-    color: rgb(15, 209, 77);
-    font-size: 30px;
-    font-weight: bold;
-}
-.box ul, .box ol {
+h2 {
     text-align: left;
-    padding-left: 20px;
-    color: white;
+    font-size: 35px;
+    color:rgb(236, 139, 20);
+    margin-bottom: 20px;
+    
 }
-/* Grid Layout for Boxes */
+
 .box-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center;
-    margin: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
 }
 
+.box {
+    background-color:black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px rgb(15, 209, 77);
+}
 
+h3 {
+    font-size: 20px;
+    color: rgb(15, 209, 77);
+    margin-bottom: 10px;
+}
 
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+li {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color:white;
+}
 
 
 
