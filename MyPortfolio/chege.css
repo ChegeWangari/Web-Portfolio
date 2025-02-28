@@ -1,274 +1,308 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Universal reset and font settings */
+* {
+    margin: 0;  /* Removes default margin */
+    padding: 0;  /* Removes default padding */
+    box-sizing: border-box;  /* Ensures all elements include padding and borders in the width/height */
+    font-family: sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Sets the default font */
 }
 
-body{
-    background-color:rgb(26, 26, 31);
+/* Body background color */
+body {
+    background-color: rgb(26, 26, 31);  /* Dark background color for the page */
 }
 
-a{
-    color: #fff;
-    text-decoration: none;
-}
-.navbar{
-
-    display: flex;
-    padding: 20px 9% 0;
-    justify-content: space-between;
-    align-items: center;
-    
-    
+/* Link styles */
+a {
+    color: #fff;  /* White text color */
+    text-decoration: none;  /* Removes underline from links */
 }
 
-.navbar .logo{
-    font-size: 40px;
-    font-weight: 700;
-    color: rgb(15, 209, 77);
-    
+/* Navbar styles */
+.navbar {
+    display: flex;  /* Uses flexbox for layout */
+    padding: 20px 9% 0;  /* Adds padding to the navbar */
+    justify-content: space-between;  /* Spaces the logo and menu links apart */
+    align-items: center;  /* Centers the items vertically */
 }
 
-.navbar ul{
-    display: flex;
-
+/* Logo styling */
+.navbar .logo {
+    font-size: 40px;  /* Large font size for the logo */
+    font-weight: 700;  /* Bold font weight for the logo */
+    color: rgb(15, 209, 77);  /* Bright green color for the logo */
 }
 
-.navbar ul li{
-    padding-left: 35px;
-    list-style: none;
-    font-size: 25px;
-    font-weight: 500;
-    transition: .5s;
+/* Navbar menu list */
+.navbar ul {
+    display: flex;  /* Uses flexbox for the menu items */
 }
 
+/* Navbar menu item styles */
+.navbar ul li {
+    padding-left: 35px;  /* Adds space between menu items */
+    list-style: none;  /* Removes bullet points */
+    font-size: 25px;  /* Sets font size for the items */
+    font-weight: 500;  /* Sets medium font weight */
+    transition: .5s;  /* Adds a transition effect on hover */
+}
+
+/* Hover and active link color changes */
 .navbar ul li:hover a,
-.navbar ul li .active  {
-    color: rgb(9, 125, 9);
-
+.navbar ul li .active {
+    color: rgb(9, 125, 9);  /* Changes link color on hover or if active */
 }
 
-
-.home{
-    display: flex;
-    padding: 30px 9% 0;
-    align-items: center;
-    height: 100vh;
+/* Hamburger menu styles (for mobile view) */
+.hamburger {
+    display: none;  /* Initially hides the hamburger icon */
+    cursor: pointer;  /* Changes the cursor to pointer on hover */
 }
 
-.home .home-info h4{
-    font-size: 25px;
-    color: rgb rgb(9, 125, 9);
-    font-weight: bold;
-}
-    .home .home-info h1{
-    font-size: 40px;
-    color: white;
-    font-weight: bold;
-}
-    
-
-
-.home .home-info h2{
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(9, 125, 9);
-    text-align: left;
-
+/* Hamburger bars styling */
+.bar {
+    display: block;  /* Makes each bar a block element */
+    height: 3px;  /* Sets bar height */
+    width: 25px;  /* Sets bar width */
+    margin: 5px auto;  /* Centers the bars and adds space between them */
+    background-color: rgb(15, 209, 77);  /* Green color for the bars */
+    transition: all 0.3s ease-in-out;  /* Smooth transition for changes */
 }
 
-.home .home-info p{
-    font-size: 16px;
-    color: white;
+/* Media queries for smaller screens (max-width: 700px) */
+@media(max-width: 700px) {
+
+    /* Shows the hamburger icon on small screens */
+    .hamburger {
+        display: block;
+    }
+
+    /* Changes the hamburger bars when active (X icon) */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;  /* Hides the middle bar */
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);  /* Rotates the first bar to form an X */
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);  /* Rotates the third bar to form an X */
+    }
+
+    /* Navbar menu styling on small screens */
+    .navbar ul {
+        display: none;  /* Hides the menu initially */
+        width: 100%;  /* Makes the menu take full width */
+        position: absolute;  /* Positions the menu absolutely */
+        background-color: rgb(26, 26, 31);  /* Dark background for the menu */
+        top: 70px;  /* Positions the menu below the navbar */
+        left: 0;  /* Aligns the menu to the left */
+        padding: 20px;  /* Adds padding inside the menu */
+        z-index: 1000;  /* Makes sure the menu is on top */
+    }
+
+    /* Shows the menu when it has the 'active' class */
+    .navbar ul.active {
+        display: flex;  /* Displays the menu */
+        flex-direction: column;  /* Stacks the menu items vertically */
+    }
+
+    /* Spacing for menu items on mobile */
+    .navbar ul li {
+        padding: 15px 0;  /* Adds padding above and below the items */
+    }
 }
 
-.home .home-info .btn-grp{
-    align-items: center;
-    padding: 20px;
-    display: flex;
+/* Home section styles */
+.home {
+    display: flex;  /* Uses flexbox for layout */
+    padding: 30px 9% 0;  /* Adds padding around the section */
+    align-items: center;  /* Centers content vertically */
+    height: 100vh;  /* Takes full viewport height */
 }
 
-.home .home-info .btn-grp .button{
-    background-color: rgb(9, 125, 9); 
-    padding: 14px 25px;
-    border-radius: 20px;
-    border: 2px solid rgb(9, 125, 9);
-    transition: 3s;
-    box-shadow: 0 0 10px rgb(9, 125, 9);
+/* Home info styles */
+.home .home-info h4 {
+    font-size: 25px;  /* Sets font size */
+    color: rgb(9, 125, 9);  /* Sets text color to green */
+    font-weight: bold;  /* Makes the text bold */
 }
 
-.home .home-info .btn-grp:hover .button{
-    background-color: transparent;
-    box-shadow: none;
-    
-} 
+/* Heading 1 styling for home */
+.home .home-info h1 {
+    font-size: 40px;  /* Large font size for the main heading */
+    color: white;  /* White text color */
+    font-weight: bold;  /* Bold font weight */
+}
 
+/* Subheading for home section */
+.home .home-info h2 {
+    font-size: 30px;  /* Font size for subheading */
+    font-weight: bold;  /* Bold font weight */
+    color: rgb(9, 125, 9);  /* Green color */
+    text-align: left;  /* Align text to the left */
+}
+
+/* Paragraph text styling */
+.home .home-info p {
+    font-size: 16px;  /* Sets font size for paragraph */
+    color: white;  /* White color for paragraph */
+}
+
+/* Button group in home section */
+.home .home-info .btn-grp {
+    align-items: center;  /* Aligns buttons in the center */
+    padding: 20px;  /* Adds padding */
+    display: flex;  /* Uses flexbox to align buttons */
+}
+
+/* Button styling in the home section */
+.home .home-info .btn-grp .button {
+    background-color: rgb(9, 125, 9);  /* Green background */
+    padding: 14px 25px;  /* Padding inside the button */
+    border-radius: 20px;  /* Rounded corners */
+    border: 2px solid rgb(9, 125, 9);  /* Green border */
+    transition: 3s;  /* Smooth transition */
+    box-shadow: 0 0 10px rgb(9, 125, 9);  /* Green shadow effect */
+}
+
+/* Button hover effect */
+.home .home-info .btn-grp:hover .button {
+    background-color: transparent;  /* Makes the background transparent */
+    box-shadow: none;  /* Removes the shadow on hover */
+}
+
+/* Social icon styling */
 .social-icons {
-    display: flex;
-    padding-left: 35px;
-    gap: 35px;
+    display: flex;  /* Uses flexbox for layout */
+    padding-left: 35px;  /* Adds padding on the left */
+    gap: 35px;  /* Spacing between icons */
 }
 
+/* Social icon link styles */
 .social-icons a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 35px;
-    height: 35px;
-    font-size: 25px;
-    color: rgb(9, 125, 9);
-    background-color: rgb(26, 25, 24);
-    border-radius: 50%;
-    border: 2px solid rgb(9, 125, 9);
-    transition: 0.3s ease-in-out;
+    display: flex;  /* Uses flexbox for layout */
+    justify-content: center;  /* Centers the icon */
+    align-items: center;  /* Centers the icon vertically */
+    width: 35px;  /* Width of the icon */
+    height: 35px;  /* Height of the icon */
+    font-size: 25px;  /* Sets icon size */
+    color: rgb(9, 125, 9);  /* Green color for the icon */
+    background-color: rgb(26, 25, 24);  /* Dark background */
+    border-radius: 50%;  /* Makes the icon circular */
+    border: 2px solid rgb(9, 125, 9);  /* Green border */
+    transition: 0.3s ease-in-out;  /* Smooth transition for hover effect */
 }
 
+/* Hover effect for social icons */
 .social-icons a:hover {
-    background-color: rgb(9, 125, 9);
-    color: rgb(26, 26, 31);
+    background-color: rgb(9, 125, 9);  /* Changes background color on hover */
+    color: rgb(26, 26, 31);  /* Changes icon color on hover */
 }
 
-.home-img .img-box{
-    padding: 3px;
-    width: 30vw;
-    height: 30vw;
-    background: rgb(9, 125, 9);
-    border-radius: 50%;
-    border: 2px solid rgb(9, 125, 9);
+/* Home image styles */
+.home-img .img-box {
+    padding: 3px;  /* Adds padding around the image box */
+    width: 30vw;  /* Sets width as 30% of the viewport width */
+    height: 30vw;  /* Sets height as 30% of the viewport width */
+    background: rgb(9, 125, 9);  /* Green background for the image box */
+    border-radius: 50%;  /* Makes the image box circular */
+    border: 2px solid rgb(9, 125, 9);  /* Green border */
 }
 
-.home-img .img-box .img-item{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: slateblue;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+/* Image inside the image box */
+.home-img .img-box .img-item {
+    position: relative;  /* Positions the image inside the box */
+    width: 100%;  /* Makes image take full width */
+    height: 100%;  /* Makes image take full height */
+    background: slateblue;  /* Background color for the image area */
+    border-radius: 50%;  /* Makes the image area circular */
+    display: flex;  /* Uses flexbox to center the image */
+    justify-content: center;  /* Centers the image horizontally */
+    overflow: hidden;  /* Hides parts of the image that overflow */
 }
 
+/* Image styling */
 .home-img .img-box .img-item img {
-    position: absolute;
-    display: block;
-    width: 100%;
-    object-fit: cover;
-
+    position: absolute;  /* Positions the image absolutely */
+    top: 50%;  /* Vertically centers the image */
+    left: 50%;  /* Horizontally centers the image */
+    transform: translate(-50%, -50%);  /* Corrects the image position */
+    width: 100%;  /* Makes the image take the full width */
+    object-fit: cover;  /* Ensures the image covers the area without distortion */
 }
 
-
- /* The about section*/
- .about{
-    margin:auto;
+/* About and Skills section padding */
+.about{
+    margin: auto;
     width: 1110px;
-    padding: 100px 0;
-    
-
+    padding:100px 0 ;
 }
-
 .about .about-me h1{
     font-size: 30px;
     font-weight: bold;
     color: rgb(15, 209, 77);
-    
-
 }
-
-
 .about .about-me p{
-    font-size: 16px;
-    color: white
-
-}
- /* Skills table section */
- .skills {
-    margin:auto;
-    width: 1110px;
-    padding: 100px 0;
-    
-    
-}
-
-.skills h1 {
-    text-align: center;
-    font-size: 40px;
-    font-weight: 600;
-    color:rgb(15, 209, 77);
-    
-}
-
-.content{
-    display: flex;
-    align-items: center; 
-    margin-top: 50px;
-}
-
-.left{
-    width: 50%;
-}
-
-.left h1{
-    text-align: left;
     font-size: 20px;
-    color: rgb(9, 125, 9)
+    color: white;
+}
+.skills {
+    padding: 80px 9%;  /* Adds padding around the sections */
+    color: rgb(15, 209, 77);
 }
 
-.left p{
-    font-size: 18px;
-    margin: 15px 0;
-    color: #fff;
+/* Skills content layout */
+.skills .content {
+    display: flex;  /* Uses flexbox to lay out the sections */
+    color: white;
 }
 
-.right {
-    flex: 1;
-    margin-left: 30px;
+/* Left side of the skills section */
+.skills .left {
+    width: 50%;  /* Takes 50% of the available width */
 }
 
-.right .line{
-    margin-bottom: 15px;
+/* Right side of the skills section */
+.skills .right {
+    width: 50%;  /* Takes 50% of the available width */
 }
 
-
-.right .info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Styling for skill progress bars */
+.skills .right .line {
+    margin: 15px 0;  /* Adds spacing between bars */
 }
 
-.right .info span{
-    font-weight: 500;
-    font-size: 18px;
-    color: #fff;
+.skills .right .bars {
+    height: 8px;  /* Sets height for progress bars */
+    border-radius: 15px;  /* Rounds the corners of the bars */
+    background-color: rgb(26, 26, 31);  /* Dark background for the bars */
 }
 
-.right .bars{
-    background-color: white;
-    height: 10px;  
-    position: relative;
-    border-radius: 3px ;
+/* Progress bar color */
+.skills .right .bars::before {
+    content: "";  /* Adds content for the bar */
+    display: block;  /* Makes it a block-level element */
+    height: 100%;  /* Makes it fill the height of the bar */
+    background-color: rgb(9, 125, 9);  /* Green color for progress */
 }
 
-.right .bars::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    background-color: rgb(9, 125, 9);
-    border-radius: 3px;
+/* Progress for HTML skill */
+.skills .right .html::before {
+    width: 70%;  /* Sets HTML progress to 70% */
 }
 
-.right .html::before{
-    width: 70%;  /* Adjust width to 70% based on your text '70%' */
+/* Progress for CSS skill */
+.skills .right .css::before {
+    width: 50%;  /* Sets CSS progress to 50% */
 }
 
-.right .css::before{
-    width: 50%;  /* Adjust width to 50% based on your text '50%' */
+/* Progress for JavaScript skill */
+.skills .right .js::before {
+    width: 40%;  /* Sets JS progress to 40% */
 }
 
-.right .js::before{  /* Correct class name for JavaScript */
-    width: 40%;  /* Adjust width to 40% based on your text '40%' */
-}
-
-.right .bootstrap::before{
-    width: 40%;  /* Adjust width to 40% based on your text '40%' */
+/* Progress for Bootstrap skill */
+.skills .right .bootstrap::before {
+    width: 40%;  /* Sets Bootstrap progress to 40% */
 }
